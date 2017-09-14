@@ -50,7 +50,8 @@ class Attachments extends \Magento\Framework\View\Element\Template
         )->where('related.product_id=' . $this->getProduct()->getId());
         $collection
             // ->addFieldToFilter('product_id', $this->getProduct()->getId())
-            ->setOrder('position', 'ASC')
+            ->addOrder('position', 'ASC')
+            ->addOrder('attachment_id', 'ASC')
         ;
         return $collection;
     }
