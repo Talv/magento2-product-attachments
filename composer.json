@@ -1,0 +1,22 @@
+{
+    "name": "talv/magento2-product-attachments",
+    "type": "magento2-module",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/module-catalog": "101.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Talv\\ProductAttachments\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    }
+}

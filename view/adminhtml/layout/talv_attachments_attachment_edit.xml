@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">Talv_ProductAttachments::attachment</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Talv\ProductAttachments\Block\Adminhtml\Attachment\Edit" name="talv_attachments_attachment_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Talv\ProductAttachments\Block\Adminhtml\Attachment\Edit\Tabs" name="talv_attachments_attachment_tabs">
+                <block class="Talv\ProductAttachments\Block\Adminhtml\Attachment\Edit\Tab\General" name="talv_attachments_attachment_edit_tab_general"/>
+                <block class="Talv\ProductAttachments\Block\Adminhtml\Attachment\Edit\Tab\Product" name="talv_attachments_attachment_edit_tab_product"/>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">general</argument>
+                    <argument name="block" xsi:type="string">talv_attachments_attachment_edit_tab_general</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">product</argument>
+                    <argument name="block" xsi:type="string">talv_attachments_attachment_edit_tab_product</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

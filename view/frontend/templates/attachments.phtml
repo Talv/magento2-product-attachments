@@ -1,0 +1,24 @@
+<?php
+/** @var \Talv\ProductAttachments\Block\Product\Attachments $block */
+$attachments = $block->getAttachments();
+if (!count($attachments)) return;
+?>
+<div class="product-downloads">
+    <ul>
+        <div class="download">
+            <?php foreach($attachments as $attachment) : ?>
+                <?php /** @var \Talv\ProductAttachments\Model\Attachment $attachment */ ?>
+                <li class="attachment file-type-<?php echo $attachment->getFileType() ?>">
+                    <a href="<?php echo $attachment->getUrl(); ?>" target="_blank">
+                       <strong class="name"><?php echo $attachment->getName() ?></strong>
+                       <span class="size">
+                           <span class="label"><?php echo __('Size') ?>:</span>
+                           (<span class="value"><?php echo $attachment->getFileSize() ?></span>)
+                       </span>
+                   </a>
+                </li>
+            <?php endforeach; ?>
+        </div>
+    </ul>
+    <div class="clearfix"></div>
+</div>

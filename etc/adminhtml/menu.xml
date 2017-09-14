@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Talv_ProductAttachments::base" title="Załączniki produktów" module="Talv_ProductAttachments" sortOrder="30" resource="Talv_ProductAttachments::base" parent="Magento_Catalog::catalog"/>
+        <add id="Talv_ProductAttachments::attachment" title="Załączniki" module="Talv_ProductAttachments" sortOrder="10" action="talv_attachments/attachment" resource="Talv_ProductAttachments::attachment" parent="Talv_ProductAttachments::base"/>
+    </menu>
+</config>
