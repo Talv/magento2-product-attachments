@@ -103,6 +103,13 @@ class Attachment extends AbstractModel implements IdentityInterface
         return $value;
     }
 
+    public function getDefaultValues()
+    {
+        $values = [];
+        $values['enabled'] = '1';
+        return $values;
+    }
+
     /**
      * @return array|mixed
      */
